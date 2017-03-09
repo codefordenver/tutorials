@@ -1,3 +1,8 @@
+---
+title: README
+permalink: README.html
+---
+
 ## CodeForDenver Tutorials and Presentations
 
 This repository was created to hold material relevant to tutorials and presentations for
