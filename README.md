@@ -1,7 +1,3 @@
----
-title: README
-permalink: README.html
----
 
 ## CodeForDenver Tutorials and Presentations
 
