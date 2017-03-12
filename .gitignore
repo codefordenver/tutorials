@@ -4,6 +4,7 @@ _site/
 
 /.bundle/
 /vendor/
+/tutorials/
 
 .#*
 *~
