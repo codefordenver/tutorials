@@ -4,7 +4,7 @@
      as file css/codemirror.css. This is because Github Pages will not allow
      resources to be referenced via HTTP, and app.klipse.tech does not seem to
      properly serve it via HTTPS.
--->
+   -->
 <link rel="stylesheet" type="text/css" href="/tutorials/css/klipse-codemirror.css">
 
 <script>
@@ -17,7 +17,7 @@
      //selector_reagent: '.language-reagent',                  // Reagent.
      selector_eval_js: '.language-klipse-eval-js',           // Javascript evaluation.
      //selector_eval_ruby: '.language-klipse-eval-ruby',       // Ruby evaluation.
-     selector_es2017: '.language-klipse-es2017'              // EcmaScript 2017 evaluation.
+     selector_es2017: '.language-klipse-es2017',             // EcmaScript 2017 evaluation.
      //selector_jsx: '.language-klipse-jsx',                   // JSX evaluation.
      //selector_transpile_jsx: '.language-transpile-jsx',      // JSX transpilation.
      //selector_eval_php: '.language-klipse-eval-php',         // PHP Evaluation.
@@ -34,7 +34,8 @@
      //clojure_cached_ns_regexp: /reagent.*/,                  // Regexp for Clojure namespaces that are cached.
      //codemirror_root: '/my-codemirror-root',                 // Root of Codemirror files.
      //scripts_root: '/my-scripts-root',                       // Root of scripts files (e.g pretty_format.js, opal.js ...).
-
+     print_length: 30                                        // Max num of items in collections to display (default 1000).
+     //beautify_strings: true                                  // Show interior of strings w/out escaping " (default false).
  };
 </script>
 
