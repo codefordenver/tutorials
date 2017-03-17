@@ -5,7 +5,7 @@ Michelle Lim + Tyler Perkins // Code for Denver // 3-20-17
 
 # It all starts with an *expression*
 # *`(function  x  y  z)`* 
-## _*\*do **function** to **x**, **y**, and **z**\**_
+## _\*do **function** to **x**, **y**, and **z**\*_
 
 ---
 
@@ -19,7 +19,7 @@ _\*adds 1, 2, and 3\*_
 
 ### Example 2:
 ## `(= 1 2)`
-_\*the equality of 1 and 2 is\*_
+_\*the equality of 1 and 2 is...\*_
 ## `=> false`
 _returns false_
 
@@ -37,14 +37,14 @@ _returns the third item_
 
 ### Example 4:
 ## `(= (+ 1 2 3) 5)`
-:point_down: Complete the expression below
+Complete the expression below
 ```klipse
 (+ 1 2 3)
 ```
 
 ### Example 5:
 ## `(if (= (+ 1 2 3) 5) "yes" "no")`
-:point_down: Complete the expression below
+Complete the expression below
 ```klipse
 (= (+ 1 2 3) 5)
 ```
@@ -65,14 +65,14 @@ _returns the third item_
 
 ---
 
-# Tools:
+# Tools (clickable):
 [![](https://s3.amazonaws.com/stufff/re-frame.png)](https://github.com/Day8/re-frame) [![](https://s3.amazonaws.com/stufff/lein.jpg)](https://leiningen.org/) [![](https://s3.amazonaws.com/stufff/figwheel.png)](https://github.com/bhauman/lein-figwheel)
 
 ## [live demo: [codefordenver/owlet-ui](github.com/codefordenver/owlet-ui)]
 
 ---
 
-# Clojure is dialect of Lisp: the second oldest high-level programming language in widespread use today
+# Clojure is dialect of Lisp: the second oldest high-level programming language widely used today
 
 ![](https://canvas-files-prod.s3.amazonaws.com/uploads/56f9a117-421b-4d8c-82f1-815be3aee2d6/lisp-cycles-edit.png) [[source]](https://xkcd.com/297/)
 
@@ -87,10 +87,10 @@ Lisps are _**functional**_ programming languages.
 
 Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming languages.
 
-### Context: Data can be passed around by *value* or *reference*
+## Context: Data can be passed around by *value* or *reference*
 - A data ***value*** is stored at a location in memory
 - Most languages pass a ***reference*** to a value at that location, which gets written over (mutated) as the data is manipulated
-- In the early days memory was miniscule, so it was important to conserve 
+- In the early days when memory was miniscule, it was important to conserve space
 
 # Object-oriented approach
 
@@ -98,10 +98,10 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 ![](https://docs.oracle.com/javase/tutorial/figures/java/concepts-bicycleObject.gif)
 [[source]](https://docs.oracle.com/javase/tutorial/java/concepts/object.html)
 
-## and specific rules for how they communicate
+## and specific rules for how they communicate.
 ![](https://s3.amazonaws.com/stufff/oop-street.jpg)
 
-- Internal object values are hidden (encapsulated), passed by ***reference*** instead
+- Passes data by ***reference***. Internal object values are hidden (encapsulated)
 - Objects interact by sending messages and calling methods
 - Methods often have side effects
 
@@ -111,10 +111,10 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
    
 # Functional approach
 
-## Defines standalone actions (expressions) that are composeable and reuseable
-- Passes data by ***value*** — every expression returns a new one
-- Compose expressions within a larger expression to create the system you want
-- Language takes care of figuring out what parts of it can be cleaned up when they're no longer used
+## Defines standalone actions (expressions) that are reuseable and composeable
+- Passes data by ***value***. Every expression returns a new, transformed copy of the data
+- Composes expressions within a larger expression to create the desired system
+- The language takes care of figuring out which parts can be cleaned up when they're no longer used
 
 ![](https://s3.amazonaws.com/stufff/fp-fish.jpg)
 [[source]](http://www.huffingtonpost.com/john-pavley/teach-a-kid-functional-pr_b_3666853.html)
@@ -123,30 +123,32 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 ---
  
 
-# Functions we'll use next
+# Functions we'll use in Part 2
 
-First, let's take them for a spin. Evaluate each of these expressions in the editor below.
+- [str](https://clojuredocs.org/clojure.core/str) - `(str 2 "legit" 2 "quit")`
+- [rest](https://clojuredocs.org/clojure.core/rest) - `(rest [0 1 2 3])`
+- [map](https://clojuredocs.org/clojure.core/map) - `(map inc [0 1 2 3])`
+    - `(map + [0 1 2 3] [4 5 6 7])`
+- [cycle](https://clojuredocs.org/clojure.core/cycle) - `(cycle ["one" "two" "three"])`
+- [take](https://clojuredocs.org/clojure.core/take) - `(take 6 (cycle ["one" "two" "three"]))`
 
-- [str](https://clojuredocs.org/clojure.core/str) - `(str 12 "cha cha cha")`
-- [rest](https://clojuredocs.org/clojure.core/rest) - `(rest [1 2 3 4])`
-- [map](https://clojuredocs.org/clojure.core/map) - `(map inc [1 2 3 4])`
-  - `  (map + [1 2 3 4] [5 6 7 8])`
-- [cycle](https://clojuredocs.org/clojure.core/cycle) - `(take 5 (cycle ["one" "two" "three"]))`
-- [lazy-cat](https://clojuredocs.org/clojure.core/str) (like [concat](https://clojuredocs.org/clojure.core/concat), but *lazy*) - 
-
+First, let's take them for a spin. Evaluate each example using the editor below.
 
 ```klipse
 (my-doc #'str)
 ```
 
+---
 
 ![](https://s3.amazonaws.com/stufff/Boacious.gif)
 
 # A note on laziness
 
-with a "lazy" sequence, the func­tion returns both an item ***and the next func­tion in the sequence***
+`map`, `take`, and `cycle` return "lazy" sequences;
 
-this provides a ***natural*** way to produce infinite data structures!
+with a lazy sequence, the func­tion returns both an item ***and the next func­tion in the sequence***,
+
+providing a ***natural*** way to produce infinite data structures!
 
 ---
 
