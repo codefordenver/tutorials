@@ -4,6 +4,7 @@
 # Intro to Clojure(script)
 Michelle Lim + Tyler Perkins // Code for Denver // 3-20-17
 
+{: style="text-align:center"}
 ![hi](https://media.giphy.com/media/L3nWlmgyqCeU8/giphy.gif)
 
 # It all starts with an *expression*
@@ -55,7 +56,11 @@ Complete the expression below
 ---
 
 # Parentheses = (hugs) for your code. Perfect for nesting.
+
+{: style="text-align:center"}
 ![](https://canvas-files-prod.s3.amazonaws.com/uploads/af080d5d-b6c1-4f21-9c8e-1962479b5514/undefined)
+
+{: style="text-align:center"}
 # (❤)
 
 
@@ -69,6 +74,8 @@ Complete the expression below
 ---
 
 # Tools (clickable):
+
+{: style="text-align:center"}
 [![](https://s3.amazonaws.com/stufff/re-frame.png)](https://github.com/Day8/re-frame){:target="_blank"}
 [![](https://s3.amazonaws.com/stufff/lein.jpg)](https://leiningen.org/){:target="_blank"}
 [![](https://s3.amazonaws.com/stufff/figwheel.png)](https://github.com/bhauman/lein-figwheel){:target="_blank"}
@@ -79,9 +86,11 @@ Complete the expression below
 
 # Clojure is dialect of Lisp: the second oldest high-level programming language widely used today
 
-![](https://canvas-files-prod.s3.amazonaws.com/uploads/56f9a117-421b-4d8c-82f1-815be3aee2d6/lisp-cycles-edit.png) [[source]](https://xkcd.com/297/){:target="_blank"}
+{: style="text-align:center"}
+[![](https://canvas-files-prod.s3.amazonaws.com/uploads/56f9a117-421b-4d8c-82f1-815be3aee2d6/lisp-cycles-edit.png)](https://xkcd.com/297/){:target="_blank"}
 
 ## Lisp timeline:
+
 ![](https://upload.wikimedia.org/wikipedia/en/timeline/71b23fdea3320ea89f55ced33e678ab2.png)
  
 ---
@@ -101,11 +110,13 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 
 **A system based on objects**
 
-![](https://docs.oracle.com/javase/tutorial/figures/java/concepts-bicycleObject.gif)
-[[source]](https://docs.oracle.com/javase/tutorial/java/concepts/object.html){:target="_blank"}
+{: style="text-align:center"}
+[![](https://docs.oracle.com/javase/tutorial/figures/java/concepts-bicycleObject.gif)
+](https://docs.oracle.com/javase/tutorial/java/concepts/object.html){:target="_blank"}
 
 **and specific rules for how they can communicate.**
 
+{: style="text-align:center"}
 ![](https://s3.amazonaws.com/stufff/oop-street.jpg)
 
 - Passes data by **reference**. Actual object values are hidden from the rest (encapsulated)
@@ -123,8 +134,8 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 - Composes expressions within a larger expression, which becomes the system itself
 - The language takes care of figuring out which parts can be cleaned up when they're no longer used
 
-![](https://s3.amazonaws.com/stufff/fp-fish.jpg)
-[[source]](http://www.huffingtonpost.com/john-pavley/teach-a-kid-functional-pr_b_3666853.html)
+{: style="text-align:center"}
+[![](https://s3.amazonaws.com/stufff/fp-fish.jpg)](http://www.huffingtonpost.com/john-pavley/teach-a-kid-functional-pr_b_3666853.html){:target="_blank"}
 
 
 ---
@@ -146,12 +157,13 @@ First, let's take them for a spin. Evaluate the examples above using the editor 
 ```klipse
 ; Use my-doc to see the docs for a function:
 (my-doc #'str)
-```
+
 
 [cljs cheatsheet](http://cljs.info/cheatsheet/){:target="_blank"}
 
 ---
 
+{: style="text-align:center"}
 ![](https://s3.amazonaws.com/stufff/Boacious.gif)
 
 # A note on laziness
