@@ -69,9 +69,9 @@ Complete the expression below
 ---
 
 # Tools (clickable):
-[![](https://s3.amazonaws.com/stufff/re-frame.png)](https://github.com/Day8/re-frame)
-[![](https://s3.amazonaws.com/stufff/lein.jpg)](https://leiningen.org/)
-[![](https://s3.amazonaws.com/stufff/figwheel.png)](https://github.com/bhauman/lein-figwheel)
+[![](https://s3.amazonaws.com/stufff/re-frame.png)](https://github.com/Day8/re-frame){:target="_blank"}
+[![](https://s3.amazonaws.com/stufff/lein.jpg)](https://leiningen.org/){:target="_blank"}
+[![](https://s3.amazonaws.com/stufff/figwheel.png)](https://github.com/bhauman/lein-figwheel){:target="_blank"}
 
 ## [live demo: [codefordenver/owlet-ui](https://github.com/codefordenver/owlet-ui)]{:target="_blank"}
 
