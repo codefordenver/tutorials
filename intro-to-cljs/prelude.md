@@ -68,7 +68,7 @@ Complete the expression below
 # Tools (clickable):
 [![](https://s3.amazonaws.com/stufff/re-frame.png)](https://github.com/Day8/re-frame) [![](https://s3.amazonaws.com/stufff/lein.jpg)](https://leiningen.org/) [![](https://s3.amazonaws.com/stufff/figwheel.png)](https://github.com/bhauman/lein-figwheel)
 
-## [live demo: [codefordenver/owlet-ui](github.com/codefordenver/owlet-ui)]
+## [live demo: [codefordenver/owlet-ui](https://github.com/codefordenver/owlet-ui)]
 
 ---
 
@@ -87,23 +87,25 @@ Lisps are _**functional**_ programming languages.
 
 Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming languages.
 
-## Context: Data can be passed around by *value* or *reference*
-- A data ***value*** is stored at a location in memory
-- Most languages pass a ***reference*** to a value at that location, which gets written over (mutated) as the data is manipulated
-- In the early days when memory was miniscule, it was important to conserve space
+### Context: Data can be passed around by *value* or *reference*
+- A data **value** is stored in a specific location in memory
+- Most languages pass a **reference** to that location instead of the value itself, manipulating data *in place*
+- In the early days memory was limited, so the focus was on reusing space
 
-# Object-oriented approach
+## Object-oriented approach
 
-## Defines objects
+**A system based on objects**
+
 ![](https://docs.oracle.com/javase/tutorial/figures/java/concepts-bicycleObject.gif)
 [[source]](https://docs.oracle.com/javase/tutorial/java/concepts/object.html)
 
-## and specific rules for how they communicate.
+**and specific rules for how they can communicate.**
+
 ![](https://s3.amazonaws.com/stufff/oop-street.jpg)
 
-- Passes data by ***reference***. Internal object values are hidden (encapsulated)
+- Passes data by **reference**. Actual object values are hidden from the rest (encapsulated)
 - Objects interact by sending messages and calling methods
-- Methods often have side effects
+- Methods often produce *side effects*
 
 >"In order to safely work with the data you have to know all the places where it might be referenced. The complexity grows with the size of the application. The more code has access to a piece of data the more proverbial balls you end up having to juggle in your head."
 —*[Clojure Distilled](https://yogthos.github.io/ClojureDistilled.html)*
@@ -113,7 +115,7 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 
 ## Defines standalone actions (expressions) that are reuseable and composeable
 - Passes data by ***value***. Every expression returns a new, transformed copy of the data
-- Composes expressions within a larger expression to create the desired system
+- Composes expressions within a larger expression, which becomes the system itself
 - The language takes care of figuring out which parts can be cleaned up when they're no longer used
 
 ![](https://s3.amazonaws.com/stufff/fp-fish.jpg)
@@ -125,18 +127,22 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 
 # Functions we'll use in Part 2
 
-- [str](https://clojuredocs.org/clojure.core/str) - `(str 2 "legit" 2 "quit")`
-- [rest](https://clojuredocs.org/clojure.core/rest) - `(rest [0 1 2 3])`
-- [map](https://clojuredocs.org/clojure.core/map) - `(map inc [0 1 2 3])`
-    - `(map + [0 1 2 3] [4 5 6 7])`
-- [cycle](https://clojuredocs.org/clojure.core/cycle) - `(cycle ["one" "two" "three"])`
-- [take](https://clojuredocs.org/clojure.core/take) - `(take 6 (cycle ["one" "two" "three"]))`
+- str - `(str 2 "legit" 2 "quit")`
+- rest - `(rest [0 1 2 3])`
+- cycle - `(cycle ["one" "two" "three"])`
+- take - `(take 6 (cycle ["one" "two" "three"]))`
+- [map](https://youtu.be/e-5obm1G_FY?t=11m23s)
+  - a ***higher-order function***; can take functions as inputs, and return functions as output
+  - `(map inc [0 1 2 3])`
+  - `(map + [0 1 2 3] [4 5 6 7])`
 
-First, let's take them for a spin. Evaluate each example using the editor below.
+First, let's take them for a spin. Evaluate the examples above using the editor below.
 
 ```klipse
 (my-doc #'str)
 ```
+
+[cljs cheatsheet](http://cljs.info/cheatsheet/)
 
 ---
 
@@ -148,7 +154,7 @@ First, let's take them for a spin. Evaluate each example using the editor below.
 
 with a lazy sequence, the func­tion returns both an item ***and the next func­tion in the sequence***,
 
-providing a ***natural*** way to produce infinite data structures!
+providing a ***natural*** way to produce infinite data structures..!
 
 ---
 
