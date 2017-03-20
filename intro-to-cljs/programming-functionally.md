@@ -32,7 +32,7 @@ lets reach for a venerable for-loop and print the numbers and the Fizzes. Then .
 - But now what about the "FizzBuzz" case?
  
 ```klipse-es2017
-for ( i = 1; i <= 16; i++ ) {
+for ( let i = 1; i <= 16; i++ ) {
   if ( i % 3 === 0 ) {
     console.log("Fizz")
   } else {
