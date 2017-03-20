@@ -24,12 +24,15 @@ Clojure is a functional language, which makes it great for writing large applica
 ## Functional programming in other languages
 
 **Watch:**
-[Anjana Vakil: Learning Functional Programming with JavaScript](https://youtu.be/e-5obm1G_FY){:target="_blank"}
+- [Lectures: Structure and Interpretation of Computer Programs](http://groups.csail.mit.edu/mac/classes/6.001/abelson-sussman-lectures/)
+- [Anjana Vakil: Learning Functional Programming with JavaScript](https://youtu.be/e-5obm1G_FY){:target="_blank"}
 -- you can do this in JavaScript!
 
 **Read:**
-[An Intro to Function Programming (via Python)](https://codewords.recurse.com/issues/one/an-introduction-to-functional-programming){:target="_blank"}
+- [An Intro to Function Programming (via Python)](https://codewords.recurse.com/issues/one/an-introduction-to-functional-programming){:target="_blank"}
 -- and Python!
+- [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/full-text/book/book.html)
+-- and Scheme! This is perhaps the most important computer book you'll every study!
 
 ---
 

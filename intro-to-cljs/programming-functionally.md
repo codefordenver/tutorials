@@ -1,6 +1,11 @@
 
 {% include pre-defs.html %}
 
+<pre hidden><code class="language-klipse">
+  (require '[cljs.test :as test])
+</code></pre>
+
+
 [← Previous: Prelude](prelude.html)
 
 ## Programming Functionally
@@ -71,14 +76,17 @@ perform. Instead, let's begin with the _data_.
 Yes, we want to _print_ a list of numbers, but what if we first think about
 the list itself. We can make an infinite list of numbers.
 
-- Click to see the docs --> [`range`](http://cljs.github.io/api/cljs.core/range){:target="_blank"}
-- Can we make it finite? [`take`](http://cljs.github.io/api/cljs.core/take){:target="_blank"}
-- Can we chop off the first element? [`rest`](http://cljs.github.io/api/cljs.core/rest){:target="_blank"}
-- Can we make a sequence of results of a function applied to each
-  element? [`map`](http://cljs.github.io/api/cljs.core/map){:target="_blank"}
+- Click to see the docs -->
+  &nbsp;[`range`](http://cljs.github.io/api/cljs.core/range){:target="_blank"}
+- Can we make it infinite and still use it?
+  &nbsp;[`take`](http://cljs.github.io/api/cljs.core/take){:target="_blank"}
+- Can we chop off the first element?
+  &nbsp;[`rest`](http://cljs.github.io/api/cljs.core/rest){:target="_blank"}
+- Can we make a sequence of results of a function applied to each element?
+  &nbsp;[`map`](http://cljs.github.io/api/cljs.core/map){:target="_blank"}
 
 ```klipse
-(range)
+(range 17)
 ```
 
 What about the Fizz's and Buzz's? How about a list where every third item is
@@ -86,20 +94,56 @@ What about the Fizz's and Buzz's? How about a list where every third item is
 Makes a new _infinite_ list by repeating the given one over and over: 
 
 - Can we combine the elements of the Fizz list with those of the Buzz list
-  giving a sequence of [`vector`](http://cljs.github.io/api/cljs.core/vector){:target="_blank"}s? [`map`](http://cljs.github.io/api/cljs.core/map){:target="_blank"}
+  giving a sequence of
+  [`vector`](http://cljs.github.io/api/cljs.core/vector){:target="_blank"}s?
+  &nbsp;[`map`](http://cljs.github.io/api/cljs.core/map){:target="_blank"}
 - Then also combine the list of numbers.
 
 ```klipse
 (take 16 (cycle ["" "" "Fizz"]))
 ```
 
-Now we have the sequence of numbers and strings we want.
-
-- Can we make the annonymous function more succinct? [`#`](http://cljs.github.io/api/syntax/function){:target="_blank"}
-- Can we print each element, one to a line? [`prn`](http://cljs.github.io/api/cljs.core/prn){:target="_blank"}
+Now try out a custom function, `pick-fz-bz-or-n`, defined below. There are
+many ways to test.
+&nbsp;[cljs.test](http://cljs.github.io/api/cljs.test/){:target="_blank"}
+&nbsp;[is](http://cljs.github.io/api/cljs.test/is){:target="_blank"}
+&nbsp;[are](http://cljs.github.io/api/cljs.test/are){:target="_blank"}
 
 ```klipse
-(take 16 (map (fn [fz bz n] (-> (str fz bz) not-empty (or n)))
+; Maybe we could use function pick-fz-bz-or-n.
+; Uncomment to see its doc-string:
+;(my-doc #'pick-fz-bz-or-n)
+
+#_         ; Note that #_(...) is another kind of comment.
+(test/are
+  [fz     bz     n   result] (= (pick-fz-bz-or-n fz bz n)
+                                result)
+  ""      ""     16  16
+  "Fizz"  ""     3   "Fizz"
+  ""      "Buzz" 5   "Buzz"
+  "Fizz"  "Buzz" 15  "FizzBuzz"
+  )
+  
+```
+
+Now we have the sequence of numbers and strings we want.
+
+- Can we make the function annonymous for brevity?
+  &nbsp;[`fn`](http://cljs.github.io/api/cljs.core/fn){:target="_blank"}
+  &nbsp;[`#`](http://cljs.github.io/api/syntax/function){:target="_blank"}
+- Can we print each element, one to a line?
+  &nbsp;[`prn`](http://cljs.github.io/api/cljs.core/prn){:target="_blank"}
+
+```klipse
+(defn pick-fz-bz-or-n
+  "Returns the concatenation of the given strings, or if empty
+  returns the last argument."
+  [fz bz n]
+  (-> (str fz bz)
+      not-empty
+      (or n)))
+
+(take 16 (map pick-fz-bz-or-n
               (cycle ["" "" "Fizz"])
               (cycle ["" "" "" "" "Buzz"])
               (rest (range))))
@@ -134,6 +178,8 @@ depend entirely on the two previous ones.
 ```klipse
 (def fibs
   (lazy-cat [0 1] (map + fibs (rest fibs))))
+
+(test/is (= (nth fibs 10) 55))
 
 (take 16 fibs)
 ```
