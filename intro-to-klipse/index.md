@@ -6,7 +6,7 @@ is easy to write, owing to the simple Markdown format, yet the result can be
 clearly presented on a big screen by a teacher. Intuitively scrolling through
 the exposition, she can elucidate difficult points by live coding within any of
 the Klipse code snippets. Later, each of her students can review the very same
-page, interactively experimenting with each new detail as his understanding
+page, interactively experimenting with each new detail as their understanding
 grows.
 
 ### Klipse Demo
