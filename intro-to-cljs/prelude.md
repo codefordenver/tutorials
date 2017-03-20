@@ -1,3 +1,6 @@
+
+{% include pre-defs.html %}
+
 # Intro to Clojure(script)
 Michelle Lim + Tyler Perkins // Code for Denver // 3-20-17
 
@@ -66,15 +69,17 @@ Complete the expression below
 ---
 
 # Tools (clickable):
-[![](https://s3.amazonaws.com/stufff/re-frame.png)](https://github.com/Day8/re-frame) [![](https://s3.amazonaws.com/stufff/lein.jpg)](https://leiningen.org/) [![](https://s3.amazonaws.com/stufff/figwheel.png)](https://github.com/bhauman/lein-figwheel)
+[![](https://s3.amazonaws.com/stufff/re-frame.png)](https://github.com/Day8/re-frame)
+[![](https://s3.amazonaws.com/stufff/lein.jpg)](https://leiningen.org/)
+[![](https://s3.amazonaws.com/stufff/figwheel.png)](https://github.com/bhauman/lein-figwheel)
 
-## [live demo: [codefordenver/owlet-ui](https://github.com/codefordenver/owlet-ui)]
+## [live demo: [codefordenver/owlet-ui](https://github.com/codefordenver/owlet-ui)]{:target="_blank"}
 
 ---
 
 # Clojure is dialect of Lisp: the second oldest high-level programming language widely used today
 
-![](https://canvas-files-prod.s3.amazonaws.com/uploads/56f9a117-421b-4d8c-82f1-815be3aee2d6/lisp-cycles-edit.png) [[source]](https://xkcd.com/297/)
+![](https://canvas-files-prod.s3.amazonaws.com/uploads/56f9a117-421b-4d8c-82f1-815be3aee2d6/lisp-cycles-edit.png) [[source]](https://xkcd.com/297/){:target="_blank"}
 
 ## Lisp timeline:
 ![](https://upload.wikimedia.org/wikipedia/en/timeline/71b23fdea3320ea89f55ced33e678ab2.png)
@@ -97,7 +102,7 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 **A system based on objects**
 
 ![](https://docs.oracle.com/javase/tutorial/figures/java/concepts-bicycleObject.gif)
-[[source]](https://docs.oracle.com/javase/tutorial/java/concepts/object.html)
+[[source]](https://docs.oracle.com/javase/tutorial/java/concepts/object.html){:target="_blank"}
 
 **and specific rules for how they can communicate.**
 
@@ -108,7 +113,7 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 - Methods often produce *side effects*
 
 >"In order to safely work with the data you have to know all the places where it might be referenced. The complexity grows with the size of the application. The more code has access to a piece of data the more proverbial balls you end up having to juggle in your head."
-—*[Clojure Distilled](https://yogthos.github.io/ClojureDistilled.html)*
+—*[Clojure Distilled](https://yogthos.github.io/ClojureDistilled.html){:target="_blank"}*
 
    
 # Functional approach
@@ -125,13 +130,13 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 ---
  
 
-# Functions we'll use in Part 2
+# Functions we'll use in Programming Functionally, next
 
 - str - `(str 2 "legit" 2 "quit")`
 - rest - `(rest [0 1 2 3])`
 - cycle - `(cycle ["one" "two" "three"])`
 - take - `(take 6 (cycle ["one" "two" "three"]))`
-- [map](https://youtu.be/e-5obm1G_FY?t=11m23s)
+- [map](https://youtu.be/e-5obm1G_FY?t=11m23s){:target="_blank"}
   - a ***higher-order function***; can take functions as inputs, and return functions as output
   - `(map inc [0 1 2 3])`
   - `(map + [0 1 2 3] [4 5 6 7])`
@@ -139,10 +144,11 @@ Javascript, Python, Ruby, C#, and C++ are all _**object-oriented**_ programming 
 First, let's take them for a spin. Evaluate the examples above using the editor below.
 
 ```klipse
+; Use my-doc to see the docs for a function:
 (my-doc #'str)
 ```
 
-[cljs cheatsheet](http://cljs.info/cheatsheet/)
+[cljs cheatsheet](http://cljs.info/cheatsheet/){:target="_blank"}
 
 ---
 
@@ -152,12 +158,13 @@ First, let's take them for a spin. Evaluate the examples above using the editor 
 
 `map`, `take`, and `cycle` return "lazy" sequences;
 
-with a lazy sequence, the func­tion returns both an item ***and the next func­tion in the sequence***,
+with a lazy sequence, the function returns both an item ***and the next function in the sequence***,
 
 providing a ***natural*** way to produce infinite data structures..!
 
 ---
 
-[Next: Programming Functionally →](/programming-functionally.md)
+[Next: Programming Functionally →](programming-functionally.html)
+
 
 {% include klipse.html %}

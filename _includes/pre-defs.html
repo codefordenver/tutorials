@@ -1,0 +1,14 @@
+
+<!-- Handy, pre-defined ClojureScript values for use in Klipse code snippets. -->
+<pre hidden><code class="language-klipse">
+
+
+(defn my-doc
+  "Like the doc macro, but requires a var argument, as in #'range ."
+  [v]
+  (->> v meta ((juxt :name :arglists :doc)) (map println) doall)
+  (println))
+
+
+</code></pre>
+

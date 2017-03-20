@@ -1,15 +1,4 @@
 
-<!-- For use in demonstrating ClojureScript, define a doc-like function. -->
-
-<pre hidden><code class="language-klipse">
-(defn my-doc
-  "Like the doc macro, but requires a var argument, as in #'range ."
-  [sym]
-  (->> sym meta ((juxt :name :arglists :doc)) (map println) doall)
-  (println))
-</code></pre>
-
-
 <!-- Klipse initialization. See https://github.com/viebel/klipse -->
 
 <!-- We must maintain our own copy of http://app.klipse.tech/css/codemirror.css
