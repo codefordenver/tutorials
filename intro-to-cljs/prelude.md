@@ -157,7 +157,7 @@ First, let's take them for a spin. Evaluate the examples above using the editor 
 ```klipse
 ; Use my-doc to see the docs for a function:
 (my-doc #'str)
-
+```
 
 [cljs cheatsheet](http://cljs.info/cheatsheet/){:target="_blank"}
 
