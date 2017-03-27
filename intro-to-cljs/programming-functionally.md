@@ -128,9 +128,10 @@ many ways to test.
 
 Now we have the sequence of numbers and strings we want.
 
-- Can we make the function annonymous for brevity?
+- Can we inline pick-fz-bz-or-n for brevity?
   &nbsp;[`fn`](http://cljs.github.io/api/cljs.core/fn){:target="_blank"}
   &nbsp;[`#`](http://cljs.github.io/api/syntax/function){:target="_blank"}
+- When should we inline?
 - Can we print each element, one to a line?
   &nbsp;[`prn`](http://cljs.github.io/api/cljs.core/prn){:target="_blank"}
 
